@@ -30,7 +30,10 @@ export function MenuItemCard({ item, quantity, onAdd, priority }: Props) {
 
       <div className="flex items-end justify-between gap-4 p-5">
         <div className="min-w-0">
-          <h3 className="font-display text-lg leading-tight text-foreground">{item.name}</h3>
+          <div className="flex items-center gap-2">
+            <h3 className="font-display text-lg leading-tight text-foreground">{item.name}</h3>
+            <DietaryBadge type={item.dietary} />
+          </div>
           <p className="mt-1 text-sm leading-relaxed text-muted-foreground">{item.description}</p>
           <p className="mt-3 text-base font-semibold text-foreground">{formatPrice(item.price)}</p>
         </div>
