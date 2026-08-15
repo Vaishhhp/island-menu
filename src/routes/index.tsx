@@ -5,6 +5,7 @@ import { toast } from "sonner";
 import { menu, allItems, formatPrice, type MenuItem } from "@/lib/menu-data";
 import { MenuItemCard } from "@/components/menu/MenuItemCard";
 import { OrderSheet, type CartLine } from "@/components/menu/OrderSheet";
+import logoAsset from "@/assets/seven-island-logo.png.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -99,20 +100,26 @@ function MenuPage() {
   return (
     <div className="min-h-screen bg-background pb-32">
       <div className="mx-auto w-full max-w-xl md:max-w-3xl">
-        <header className="px-6 pt-10">
+        <header className="px-6 pt-8">
           <div className="flex items-start justify-between gap-4">
-            <div>
-              <p className="text-[0.7rem] uppercase tracking-[0.35em] text-muted-foreground">Est. Mumbai</p>
-              <h1 className="mt-2 font-display text-[2.1rem] leading-[1.05] text-foreground">
-                Seven Island
-                <span className="block text-primary">Cafe</span>
-              </h1>
-              <p className="mt-3 text-[0.95rem] text-muted-foreground">Good food, good moments.</p>
+            <div className="flex items-center gap-4">
+              <img
+                src={logoAsset.url}
+                alt="Seven Island Cafe"
+                className="h-14 w-14 object-contain"
+              />
+              <div>
+                <h1 className="font-display text-[1.6rem] leading-[1.1] text-foreground">
+                  Seven Island
+                  <span className="block text-primary">Cafe</span>
+                </h1>
+                <p className="mt-1 text-[0.85rem] text-muted-foreground">Good food, good moments.</p>
+              </div>
             </div>
             <button
               type="button"
               aria-label="Menu information"
-              className="flex h-11 w-11 items-center justify-center rounded-full border border-border bg-card text-muted-foreground transition-colors hover:text-foreground"
+              className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-border bg-card text-muted-foreground transition-colors hover:text-foreground"
             >
               <UtensilsCrossed className="h-5 w-5" />
             </button>
