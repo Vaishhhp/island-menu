@@ -14,6 +14,7 @@ export type MenuItem = {
   price: number;
   image: string;
   tag?: string;
+  dietary: "veg" | "non-veg";
 };
 
 export type MenuCategory = {
