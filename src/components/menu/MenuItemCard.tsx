@@ -1,5 +1,6 @@
 import { Plus, Check } from "lucide-react";
 import { formatPrice, type MenuItem } from "@/lib/menu-data";
+import { DietaryBadge } from "./DietaryBadge";
 
 type Props = {
   item: MenuItem;
@@ -20,8 +21,11 @@ export function MenuItemCard({ item, quantity, onAdd, priority }: Props) {
           loading={priority ? "eager" : "lazy"}
           className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
         />
+        <div className="absolute left-3 top-3">
+          <DietaryBadge type={item.dietary} />
+        </div>
         {item.tag ? (
-          <span className="absolute left-3 top-3 rounded-full bg-background/85 px-3 py-1 text-[0.7rem] font-medium tracking-wide text-muted-foreground backdrop-blur">
+          <span className="absolute right-3 top-3 rounded-full bg-background/85 px-3 py-1 text-[0.7rem] font-medium tracking-wide text-muted-foreground backdrop-blur">
             {item.tag}
           </span>
         ) : null}

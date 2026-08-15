@@ -14,6 +14,7 @@ export type MenuItem = {
   price: number;
   image: string;
   tag?: string;
+  dietary: "veg" | "non-veg";
 };
 
 export type MenuCategory = {
@@ -33,7 +34,7 @@ export const menu: MenuCategory[] = [
         description: "Double shot espresso under a soft velvet milk foam.",
         price: 160,
         image: cappuccino,
-        tag: "Veg",
+        dietary: "veg",
       },
       {
         id: "classic-latte",
@@ -41,7 +42,7 @@ export const menu: MenuCategory[] = [
         description: "Slow-steamed milk, gentle roast, quietly comforting.",
         price: 180,
         image: latte,
-        tag: "Veg",
+        dietary: "veg",
       },
     ],
   },
@@ -55,7 +56,7 @@ export const menu: MenuCategory[] = [
         description: "Golden sourdough, three cheeses, buttery and molten.",
         price: 220,
         image: grilledCheese,
-        tag: "Veg",
+        dietary: "veg",
       },
     ],
   },
@@ -69,7 +70,7 @@ export const menu: MenuCategory[] = [
         description: "Silky white sauce, garlic, parmesan and fresh herbs.",
         price: 280,
         image: pasta,
-        tag: "Veg",
+        dietary: "veg",
       },
     ],
   },
@@ -84,6 +85,7 @@ export const menu: MenuCategory[] = [
         price: 240,
         image: chickenSandwich,
         tag: "High protein",
+        dietary: "non-veg",
       },
     ],
   },
@@ -97,7 +99,7 @@ export const menu: MenuCategory[] = [
         description: "Dense, fudgy centre with a delicate crackled top.",
         price: 150,
         image: brownie,
-        tag: "Veg",
+        dietary: "veg",
       },
       {
         id: "classic-cheesecake",
@@ -105,7 +107,7 @@ export const menu: MenuCategory[] = [
         description: "Baked New York style with a buttery biscuit base.",
         price: 220,
         image: cheesecake,
-        tag: "Veg",
+        dietary: "veg",
       },
     ],
   },
@@ -120,6 +122,7 @@ export const menu: MenuCategory[] = [
         price: 180,
         image: coldCoffee,
         tag: "Chilled",
+        dietary: "veg",
       },
     ],
   },
