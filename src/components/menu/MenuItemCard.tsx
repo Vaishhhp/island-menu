@@ -21,8 +21,11 @@ export function MenuItemCard({ item, quantity, onAdd, priority }: Props) {
           loading={priority ? "eager" : "lazy"}
           className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
         />
+        <div className="absolute left-3 top-3">
+          <DietaryBadge type={item.dietary} />
+        </div>
         {item.tag ? (
-          <span className="absolute left-3 top-3 rounded-full bg-background/85 px-3 py-1 text-[0.7rem] font-medium tracking-wide text-muted-foreground backdrop-blur">
+          <span className="absolute right-3 top-3 rounded-full bg-background/85 px-3 py-1 text-[0.7rem] font-medium tracking-wide text-muted-foreground backdrop-blur">
             {item.tag}
           </span>
         ) : null}
@@ -30,10 +33,7 @@ export function MenuItemCard({ item, quantity, onAdd, priority }: Props) {
 
       <div className="flex items-end justify-between gap-4 p-5">
         <div className="min-w-0">
-          <div className="flex items-center gap-2">
-            <h3 className="font-display text-lg leading-tight text-foreground">{item.name}</h3>
-            <DietaryBadge type={item.dietary} />
-          </div>
+          <h3 className="font-display text-lg leading-tight text-foreground">{item.name}</h3>
           <p className="mt-1 text-sm leading-relaxed text-muted-foreground">{item.description}</p>
           <p className="mt-3 text-base font-semibold text-foreground">{formatPrice(item.price)}</p>
         </div>
