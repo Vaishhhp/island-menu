@@ -1,5 +1,6 @@
 import { Plus, Check } from "lucide-react";
 import { formatPrice, type MenuItem } from "@/lib/menu-data";
+import { DietaryBadge } from "./DietaryBadge";
 
 type Props = {
   item: MenuItem;
