@@ -31,14 +31,14 @@ function MenuPage() {
   const [cart, setCart] = useState<Record<string, number>>({});
   const [open, setOpen] = useState(false);
   const [tableNumber, setTableNumber] = useState("");
-  const [activeCategory, setActiveCategory] = useState(menu[0].id);
+  const [activeCategory, setActiveCategory] = useState(menu[0]!.id);
   const sectionRefs = useRef<Record<string, HTMLElement | null>>({});
 
   const lines: CartLine[] = useMemo(
     () =>
       allItems
-        .filter((item) => cart[item.id] > 0)
-        .map((item) => ({ item, quantity: cart[item.id] })),
+        .map((item) => ({ item, quantity: cart[item.id] ?? 0 }))
+        .filter((line) => line.quantity > 0),
     [cart],
   );
 
