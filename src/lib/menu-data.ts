@@ -35,6 +35,7 @@ export const menu: MenuCategory[] = [
         price: 160,
         image: cappuccino,
         tag: "Veg",
+        dietary: "veg",
       },
       {
         id: "classic-latte",
@@ -43,6 +44,7 @@ export const menu: MenuCategory[] = [
         price: 180,
         image: latte,
         tag: "Veg",
+        dietary: "veg",
       },
     ],
   },
